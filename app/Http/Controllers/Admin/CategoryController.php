@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -79,10 +80,15 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        if ($category->delete()){
-            return redirect()->route('category.index')->with('ok','Create new product successffuly');
+        $Count = Product::where('category_id', $category->id)->count();
+        if ($Count > 0){
+            return redirect()->route('category.index')->with('no','Something error, Please try again');
         }else {
-            xreturn redirect()->route('category.index')->with('no','Something error, Please try again');
+            if($category->delete()){
+                return redirect()->route('category.index')->with('ok','Create new product successffuly');
+            }else {
+                return redirect()->route('category.index')->with('no','Something error, Please try again');
+            }
         }
     }
 }
