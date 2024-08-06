@@ -73,7 +73,7 @@
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-th"></i> <span>Categories</span> <i class="fa fa-angle-left pull-right"></i>
+            <i class="fa fa-list"></i> <span>Categories</span> <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
             <li><a href="{{ route('category.index') }}"><i class="fa fa-circle-o"></i> List</a></li>
@@ -83,7 +83,7 @@
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-th"></i> <span>Products</span> <i class="fa fa-angle-left pull-right"></i>
+          <i class="fa fa-product-hunt"></i> <span>Products</span> <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
             <li><a href="{{ route('product.index') }}"><i class="fa fa-circle-o"></i> List</a></li>
@@ -103,7 +103,51 @@
           </ul>
         </li>
 
-
+        <li class="treeview">
+          <a href="#">
+          <i class="fa fa-user"></i> <span>User</span> <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ route('product.index') }}"><i class="fa fa-circle-o"></i> List</a></li>
+            <li><a href="{{ route('product.create') }}"><i class="fa fa-circle-o"></i> Add new</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+          <i class="fa fa-th"></i> <span>Baner</span> <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ route('product.index') }}"><i class="fa fa-circle-o"></i> List</a></li>
+            <li><a href="{{ route('product.create') }}"><i class="fa fa-circle-o"></i> Add new</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+          <i class="fa fa-user"></i> <span>Customer</span> <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ route('product.index') }}"><i class="fa fa-circle-o"></i> List</a></li>
+            <li><a href="{{ route('product.create') }}"><i class="fa fa-circle-o"></i> Add new</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+          <i class="fa fa-comment"></i> <span>Comment</span> <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ route('product.index') }}"><i class="fa fa-circle-o"></i> List</a></li>
+            <li><a href="{{ route('product.create') }}"><i class="fa fa-circle-o"></i> Add new</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+          <i class="fa fa-list"></i> <span>Blog</span> <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ route('product.index') }}"><i class="fa fa-circle-o"></i> List</a></li>
+            <li><a href="{{ route('product.create') }}"><i class="fa fa-circle-o"></i> Add new</a></li>
+          </ul>
+        </li>
 
       </ul>
     </section>
