@@ -14,11 +14,17 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $key = request('key');
-        $data = Category::orderBy('id', 'DESC')->paginate();
-        if ($key){
-            $data = Category::where('name', 'LIKE', '%'.$key.'%')->paginate();
+        $query = new Category;
+        $key = request('keyword');
+        $order = request('order');
+        if($key){
+            $query = $query->where('name', 'LIKE', '%'.$key.'%');
         }
+        if($order){
+            $arr = explode('-', $order);
+            $query = $query->orderBy($arr[0], $arr[1]);  
+        }
+        $data = $query->paginate(20);
         return view('admin.category.index', compact('data'));
     }
 
@@ -35,6 +41,9 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|min:4|max:150'
+        ]);
         $data = request()->all('name','status');
         // dd($data);
         if (Category::create($data)){
@@ -66,6 +75,9 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
+        $request->validate([
+            'name' => 'required|min:4|max:150'
+        ]);
         $data =  request()->all('name','status');
         // dd($data);
         if ($category->update($data)){

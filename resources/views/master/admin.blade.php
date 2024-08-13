@@ -39,7 +39,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="ad_assets/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs"></span>
+              <span class="hidden-xs">{{ auth()->user()->name }}</span>
             </a>
           </li>
         </ul>
@@ -59,7 +59,7 @@
           <img src="ad_assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p></p>
+          <p>{{ auth()->user()->name }}</p>
           <a href="{{ route('admin.logout') }}"><i class="fa fa-circle text-success"></i> Logout</a>
         </div>
       </div>
@@ -108,8 +108,8 @@
           <i class="fa fa-user"></i> <span>User</span> <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ route('product.index') }}"><i class="fa fa-circle-o"></i> List</a></li>
-            <li><a href="{{ route('product.create') }}"><i class="fa fa-circle-o"></i> Add new</a></li>
+            <li><a href="{{ route('user.index') }}"><i class="fa fa-circle-o"></i> List</a></li>
+            <li><a href="{{ route('user.create') }}"><i class="fa fa-circle-o"></i> Add new</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -117,8 +117,8 @@
           <i class="fa fa-th"></i> <span>Baner</span> <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ route('product.index') }}"><i class="fa fa-circle-o"></i> List</a></li>
-            <li><a href="{{ route('product.create') }}"><i class="fa fa-circle-o"></i> Add new</a></li>
+            <li><a href="{{ route('banner.index') }}"><i class="fa fa-circle-o"></i> List</a></li>
+            <li><a href="{{ route('banner.create') }}"><i class="fa fa-circle-o"></i> Add new</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -126,8 +126,8 @@
           <i class="fa fa-user"></i> <span>Customer</span> <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ route('product.index') }}"><i class="fa fa-circle-o"></i> List</a></li>
-            <li><a href="{{ route('product.create') }}"><i class="fa fa-circle-o"></i> Add new</a></li>
+            <li><a href="{{ route('customer.index') }}"><i class="fa fa-circle-o"></i> List</a></li>
+            <li><a href="{{ route('customer.create') }}"><i class="fa fa-circle-o"></i> Add new</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -135,8 +135,8 @@
           <i class="fa fa-comment"></i> <span>Comment</span> <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ route('product.index') }}"><i class="fa fa-circle-o"></i> List</a></li>
-            <li><a href="{{ route('product.create') }}"><i class="fa fa-circle-o"></i> Add new</a></li>
+            <li><a href="{{ route('comment.index') }}"><i class="fa fa-circle-o"></i> List</a></li>
+            <li><a href="{{ route('comment.create') }}"><i class="fa fa-circle-o"></i> Add new</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -144,8 +144,8 @@
           <i class="fa fa-list"></i> <span>Blog</span> <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ route('product.index') }}"><i class="fa fa-circle-o"></i> List</a></li>
-            <li><a href="{{ route('product.create') }}"><i class="fa fa-circle-o"></i> Add new</a></li>
+            <li><a href="{{ route('blog.index') }}"><i class="fa fa-circle-o"></i> List</a></li>
+            <li><a href="{{ route('blog.create') }}"><i class="fa fa-circle-o"></i> Add new</a></li>
           </ul>
         </li>
 

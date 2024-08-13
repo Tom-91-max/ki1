@@ -4,10 +4,19 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\BannerController;
+use App\Http\Controllers\Admin\BlogController as AdminBlogController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\CommentController as AdminCommentController;
+use App\Http\Controllers\Admin\CustomerController as AdminCustomerController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\BannerController as ControllersBannerController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\OrderController;
 
 /*
@@ -82,7 +91,7 @@ Route::group(['prefix' => 'order','middleware' => 'customer'], function() {
 Route::get('/admin/login', [AdminController::class, 'login'])->name('admin.login');
 Route::post('/admin/login', [AdminController::class, 'check_login']);
 
-Route::group(['prefix' => 'admin'], function() {
+Route::group(['prefix' => 'admin', 'middleware'=>'auth'], function() {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
     Route::get('/logout', [AdminController::class, 'logout'])->name('admin.logout');
     Route::get('/order', [OrderController::class, 'index'])->name('order.index');
@@ -91,7 +100,12 @@ Route::group(['prefix' => 'admin'], function() {
 
     Route::resource('category', CategoryController::class);
     Route::resource('product', ProductController::class);
+    Route::resource('user', UserController::class);
     Route::get('product-delete-image/{image}', [ProductController::class,'destroyImage'])->name('product.destroyImage');
+    Route::resource('banner', BannerController::class);
+    Route::resource('customer', AdminCustomerController::class);
+    Route::resource('comment', AdminCommentController::class);
+    Route::resource('blog', AdminBlogController::class);
 });
 
 

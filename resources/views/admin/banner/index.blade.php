@@ -1,5 +1,5 @@
 @extends('master.admin')
-@section('title', 'Product manager')
+@section('title', 'Banner manager')
 @section('main')
 
 <form action="" method="GET" class="form-inline" role="form">
@@ -7,16 +7,6 @@
     <div class="form-group">
         <label for="">  Name</label>
         <input type="text" class="form-control" name="keyword" placeholder="Input field" value="{{request('keyword')}}">
-    </div>
-    <div class="form-group">
-    <label for="">  Category</label>
-        <select name="cat_id" class="form-control">
-            <option value="">Choice One---</option>
-            @foreach ($cats as $cat)
-            <option value="{{ $cat->id }}" {{request('cat_id') == $cat->id ? 'selected' : ''}}>{{ $cat->name }}</option>
-            @endforeach
-        </select>   
-
     </div>
     <div class="form-group">
         
@@ -33,10 +23,8 @@
 
     </div>
 
-
-
     <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
-    <a href="{{ route('product.create') }}" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add new</a>
+    <a href="{{ route('banner.create')}}" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add new</a>
 </form>
 
 
@@ -46,30 +34,35 @@
 <table class="table table-hover">
     <thead>
         <tr>
-            <th>STT</th>
-            <th>Product Name</th>
-            <th>Category</th>
-            <th>Price</th>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Link</th>
             <th>Image</th>
+            <th>Description</th>
+            <th>Position</th>
+            <th>Prioty</th>
+            <th>Status</th>
             <th></th>
         </tr>
     </thead>
     <tbody>
         @foreach ($data as $model)
         <tr>
-            <td>{{ $loop->index + 1 }}</td>
+            <td>{{ $model->id }}</td>
             <td>{{ $model->name }}</td>
-            <td>{{ $model->cat->name }}</td>
-            <td>{{ $model->price  }} <span class="label label-success">{{ $model->sale_price  }}</span></td>
-            <td>{{ $model->status == 0 ? 'Hidden' : 'Publish' }}</td>
+            <td>{{ $model->link}}</td>
             <td>
-                <img src="uploads/product/{{ $model->image }}" width="40">
+                <img src="uploads/banner/{{ $model->image }}" width="40">
             </td>
+            <td>{{ $model->description  }}</td>
+            <td>{{ $model->position}}</td>
+            <td>{{ $model->prioty}}</td>
+            <td>{{ $model->status == 0 ? 'Hidden' : 'Publish' }}</td>
             <td class="text-right">
-                <form action="{{ route('product.destroy', $model->id) }}" method="post">
+                <form action="{{ route('banner.destroy', $model->id) }}" method="post">
                     @csrf @method('DELETE')
 
-                    <a href="{{ route('product.edit', $model->id) }}" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
+                    <a href="{{ route('banner.edit', $model->id) }}" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
                     <button class="btn btn-sm btn-danger" onclick="return confirm('Are you suere wanto delete it?')"><i class="fa fa-trash"></i></button>
                 </form>
             </td>
