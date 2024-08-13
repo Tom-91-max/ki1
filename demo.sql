@@ -173,7 +173,7 @@ Create table order_details
 );
 
 INSERT INTO banners(name, image, link, status) VALUES
-('Banner 1', 'banner_bg.png', '#', 1) ;
+('My shop', 'banner_bg.png', '#', 1) ;
 
 INSERT INTO banners(name, image, position, status) VALUES
 ('gallery 1', 'gallery_img01.png', 'gallery', 1) ,
@@ -181,7 +181,7 @@ INSERT INTO banners(name, image, position, status) VALUES
 ('gallery 3', 'gallery_img03.png', 'gallery', 1) ;
 
 INSERT INTO `users` (`name`, `email`, `password`, `created_at`, `updated_at`) VALUES
-('Admin Manager', 'admin@gmail.com', '$2y$12$ElFD8Eq8bOZ8bsym04rY1e6znHP874r/FSPw/ZfMy1CB85O/Yc60q', '2023-12-04', '2023-12-04');
+('Nguyễn Thanh Thủy', 'thetg.22ba13293@usth.edu.vn', '$2y$12$u7YvHMORtXORaF4vlOeqIulZflCinU7EART7Bzsdt/1wMownAnE9e', '2024-08-13', '2024-08-13');
 
 INSERT INTO categories(name, status) VALUES
 ('Dưa hấu', 1) ,
@@ -201,12 +201,12 @@ INSERT INTO `product_images` (`id`, `image`, `product_id`, `status`, `created_at
 (20, 'lP4RQq0nehFTxGrnI0mVMJJOBKqlh2ziyt21m4Hd.png', 1, 0, '2023-12-06', '2023-12-06');
 
 INSERT INTO `customers` (`id`, `name`, `email`, `phone`, `address`, `gender`, `password`, `email_verified_at`, `created_at`, `updated_at`) VALUES
-(1, 'Nguyễn Văn Anh', 'svbkhn2023@gmail.com', '0986421127', 'Hà Nội', 1, '$2y$12$peSIPwUaNwtRuUwhF2.i/.EaL2DUzc6zhEW4Hne3eOeTbZIriYRRC', '2024-01-03', '2024-01-03', '2024-01-03');
+(1, 'Nguyễn Thanh Thủy', 'thetg.22ba13293@usth.edu.vn', '0394631391', 'ssssssss', 0, '$2y$12$u7YvHMORtXORaF4vlOeqIulZflCinU7EART7Bzsdt/1wMownAnE9e', '2024-08-13', '2024-08-13', '2024-08-13');
 
 INSERT INTO `orders` (`id`, `name`, `email`, `phone`, `address`, `token`, `customer_id`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Nguyễn Văn Anh', 'svbkhn2023@gmail.com', '0986421127', 'Hà Nội', NULL, 1, 1, '2024-01-03', '2024-01-03'),
-(2, 'Nguyễn Văn Anh', 'svbkhn2023@gmail.com', '0986421127', 'Hà Nội', NULL, 1, 2, '2024-01-03', '2024-01-03'),
-(3, 'Nguyễn Văn Anh', 'svbkhn2023@gmail.com', '0986421127', 'Hà Nội', NULL, 1, 3, '2024-01-03', '2024-01-03');
+(1, 'Nguyễn Thanh Thủy', 'thetg.22ba13293@usth.edu.vn', '0394631391', 'ssssssss', NULL, 1, 1, '2024-08-13', '2024-08-13'),
+(2, 'Nguyễn Thanh Thủy', 'thetg.22ba13293@usth.edu.vn', '0394631391', 'ssssssss', NULL, 1, 2, '2024-08-13', '2024-08-13'),
+(3, 'Nguyễn Thanh Thủy', 'thetg.22ba13293@usth.edu.vn', '0394631391', 'ssssssss', NULL, 1, 3, '2024-08-13', '2024-08-13');
 
 INSERT INTO `order_details` (`order_id`, `product_id`, `quantity`, `price`) VALUES
 (1, 1, 3, 250000.000),
@@ -217,3 +217,4 @@ INSERT INTO `order_details` (`order_id`, `product_id`, `quantity`, `price`) VALU
 (3, 1, 3, 250000.000),
 (3, 2, 4, 250000.000),
 (3, 3, 1, 250000.000);
+

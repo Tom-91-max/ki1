@@ -32,10 +32,9 @@
                     <div class="col-lg-6">
                         <div class="contact-content">
                             <div class="section-title mb-15">
-                                <span class="sub-title">Create your account</span>
-                                <h2 class="title">Get in <span>Touch</span></h2>
+                                <span class="sub-title">WELLCOME TO OUT PAGE </span>
+                                <h2 class="title">Create your <span>account</span></h2>
                             </div>
-                            <p>Meat provide well shaped fresh and the organic meat well <br> animals is Humans have hunted schistoric</p>
                             <form action="" method="POST">
                                 @csrf
                                 <div class="contact-form-wrap">
@@ -65,9 +64,9 @@
                                     </div>
                                     <div class="form-grp">
                                         <select name="gender" class="form-control">
-                                            <option value="">Select One</option>
+                                            <option value="" >Gender</option>
                                             <option value="1">Male</option>
-                                            <option value="0">Fe Male</option>
+                                            <option value="0">FeMale</option>
                                         </select>
                                     </div>
                                     <div class="form-grp">

@@ -81,10 +81,10 @@
                                 </div>
                                 <div class="header-top-social">
                                     <ul class="list-wrap">
-                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                        <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="https://x.com/home"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
+                                        <li><a href="https://www.google.com/"><i class="fab fa-linkedin-in"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -126,7 +126,7 @@
                                                     <li><a href="team-details.html">Team Details</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="{{ route('home.contact')}}">Contact</a></li>
                                         </ul>
                                     </div>
                                     <div class="header-action d-none d-md-block">

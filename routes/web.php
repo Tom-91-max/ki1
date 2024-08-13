@@ -26,6 +26,7 @@ use App\Http\Controllers\OrderController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::get('/about-us', [HomeController::class, 'about'])->name('home.about');
+Route::get('/contact', [HomeController::class, 'contact'])->name('home.contact');
 Route::get('/category/{cat}', [HomeController::class, 'category'])->name('home.category');
 Route::get('/product/{product}', [HomeController::class, 'product'])->name('home.product');
 Route::get('/favorite/{product}', [HomeController::class, 'favorite'])->name('home.favorite');
