@@ -10,7 +10,10 @@
             @csrf
             <div class="form-group">
                 <label for="">Category name</label>
-                <input type="text" class="form-control" name="name" placeholder="Input field">
+                <input type="text" class="form-control" name="name" placeholder="Input field" value="{{old('name')}}">
+                @error('name')
+                <small>{{$message}}</small>
+                @enderror
             </div>
         
             <div class="form-group">
@@ -18,14 +21,14 @@
                 
                 <div class="radio">
                     <label>
-                        <input type="radio" name="status" value="1" />
+                        <input type="radio" name="status" value="1" {{old('status') == 1 ? 'checked' : ''}} />
                         Publish
                     </label>
                 </div>
 
                 <div class="radio">
                     <label>
-                        <input type="radio" name="status" value="0" />
+                        <input type="radio" name="status" value="0" {{old('status') == 0 ? 'checked' : ''}} />
                         Hidden
                     </label>
                 </div>

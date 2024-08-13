@@ -5,27 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class Blog extends Model
 {
     use HasFactory;
-    protected $appends = ['favorited'];
-    protected $fillable = ['name', 'price','sale_price', 'image', 'category_id', 'description', 'status'];
-
-    // 1-1
-    public function cat() {
-        return $this->hasOne(Category::class, 'id','category_id');
-    }
-
-    // 1-n
-    public function images() {
-        return $this->hasMany(ProductImage::class, 'product_id','id');
-    }
-
-    public function getFavoritedAttribute() {
-        $favorited = Favorite::where(['product_id' => $this->id, 'customer_id' => auth('cus')->id()])->first();
-        return $favorited ? true : false;
-    }
-
+    protected $fillable = ['name', 'link', 'image', 'position', 'description', 'status'];
     public function scopeMyfillter($query){
         $key = request('keyword');
         $cat_id = request('cat_id');
@@ -42,6 +25,4 @@ class Product extends Model
         }
         return $query;
     }
-
-
 }

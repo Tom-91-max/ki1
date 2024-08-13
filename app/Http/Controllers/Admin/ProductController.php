@@ -15,14 +15,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $key = request('keyword');
-        // dd($key);
-                $data = Product::orderBy('id','DESC')->paginate(20);
-        if($key){
-            $data = Product::where('name', 'LIKE', '%'.$key.'%')->paginate();
-            // dd($data);
-        }
-        return view('admin.product.index', compact('data'));
+        $cats = Category::orderBy('name','ASC')->select('id','name')->get();
+        $data = Product::myFillter()->paginate(20);
+        return view('admin.product.index', compact('data', 'cats'));
     }
 
     /**
@@ -70,12 +65,7 @@ class ProductController extends Controller
 
             return redirect()->route('product.index')->with('ok','Create new product successffuly');with('ok','Create new product successffuly');
         }
-
-
-
         return redirect()->back()->with('no','Something error, Please try again');
-
-
     }
 
     /**
@@ -113,12 +103,10 @@ class ProductController extends Controller
 
         if ($request->has('img')) {
             $img_name = $product->image;
-            
             $image_path = public_path('uploads/product').'/'.$img_name;
             if (file_exists($image_path)) {
                 unlink($image_path);
             }
-
             $imag_name = $request->img->hashName();
             $request->img->move(public_path('uploads/product'), $imag_name);
             $data['image'] = $imag_name;

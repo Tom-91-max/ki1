@@ -11,6 +11,9 @@
             <div class="form-group">
                 <label for="">Category name</label>
                 <input type="text" class="form-control" id="" name="name" value="{{$category->name}}"placeholder="Input field">
+                @error('name')
+                <small>{{$message}}</small>
+                @enderror
             </div>
         
             <div class="form-group">

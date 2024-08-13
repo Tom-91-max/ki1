@@ -3,10 +3,24 @@
 @section('main')
 
 <form action="" method="GET" class="form-inline" role="form">
-@csrf
+    @csrf
     <div class="form-group">
-        <label class="sr-only" for="">label</label>
-        <input type="text" class="form-control" name="key" placeholder="Input field">
+        <label for="">  Name</label>
+        <input type="text" class="form-control" name="keyword" placeholder="Input field" value="{{ request('name') }}">
+    </div>
+    <div class="form-group">
+        
+    <label for="">  Arrange</label>
+    <select name="order" class="form-control">
+        <option value="">Default</option>
+            <option value="id-asc" {{request('order') == 'id-asc' ? 'checked' : ''}}>sort ascending by id</option>
+            <option value="id-desc" {{request('order') == 'id-desc' ? 'checked' : ''}}>sort descending by id</option>
+            <option value="name-asc"{{request('order') == 'name-asc' ? 'checked' : ''}}>sort ascending by name</option>
+            <option value="name-desc"{{request('order') == 'name-desc' ? 'checked' : ''}}>sort descending by name</option>
+            <option value="created_at-asc"{{request('order') == 'created_at-asc' ? 'checked' : ''}}>sort ascending by created_at</option>
+            <option value="created_at-desc"{{request('order') == 'created_at-desc' ? 'checked' : ''}}>sort descending by created_at</option>
+        </select>      
+
     </div>
 
 
@@ -24,6 +38,8 @@
         <tr>
             <th>STT</th>
             <th>Category Name</th>
+            <th>Totall Product</th>
+            <th>Date Created</th>
             <th>Category Status</th>
             <th></th>
         </tr>
@@ -34,7 +50,9 @@
 
             <td>{{$cats->id}}</td>
             <td>{{$cats->name}}</td>
-            <td>{{$cats->status}}</td>
+            <td>{{$cats->products->count()}}</td>
+            <td>{{$cats->created_at->format('d/m/y') }}</td>
+            <td>{{$cats->status == 1 ? 'Publish' : 'Hidden'}}</td>
             
             <td class="text-right">
                 <form action="{{route('category.destroy', $cats->id)}}" method="POST">
@@ -48,5 +66,6 @@
     </tbody>
 </table>
 
+{{$data->appends(request()->all())->links()}}
 
 @stop()
