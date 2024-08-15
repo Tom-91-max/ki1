@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Banner;
+use App\Models\Blog;
 use App\Models\Favorite;
 use App\Models\Category;
 use App\Models\Product;
@@ -17,8 +18,9 @@ class HomeController extends Controller
         $news_products = Product::orderBy('created_at', 'DESC')->limit(2)->get();
         $sale_products = Product::orderBy('created_at', 'DESC')->where('sale_price','>', 0)->limit(3)->get();
         $feature_products = Product::inRandomOrder()->limit(4)->get();
+        $lastest_news = Blog::orderBy('created_at', 'DESC')->limit(3)->get();
         // dd ($news_products);
-        return view('home.index', compact('topBanner','gallerys','news_products','sale_products','feature_products'));
+        return view('home.index', compact('topBanner','gallerys','news_products','sale_products','feature_products', 'lastest_news'));
     }
 
     public function about() {
@@ -56,4 +58,20 @@ class HomeController extends Controller
     public function contact() {
         return view('home.contact');
     }
+    public function our_blog() {
+        return view('home.our_blog');
+    }
+    public function blog_details() {
+        return view('home.blog_details');
+    }
+    public function services_details() {
+        return view('home.services_details');
+    }
+    public function services() {
+        return view('home.services');
+    }
+    public function team_details() {
+        return view('home.team_details');
+    }
+
 }
