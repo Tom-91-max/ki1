@@ -181,7 +181,7 @@ INSERT INTO banners(name, image, position, status) VALUES
 ('gallery 3', 'gallery_img03.png', 'gallery', 1) ;
 
 INSERT INTO `users` (`name`, `email`, `password`, `created_at`, `updated_at`) VALUES
-('Nguyễn Thanh Thủy', 'thetg.22ba13293@usth.edu.vn', '$2y$12$u7YvHMORtXORaF4vlOeqIulZflCinU7EART7Bzsdt/1wMownAnE9e', '2024-08-13', '2024-08-13');
+('Trần Gia Thế', 'thetg.22ba13293@usth.edu.vn', '$2y$12$u7YvHMORtXORaF4vlOeqIulZflCinU7EART7Bzsdt/1wMownAnE9e', '2024-08-13', '2024-08-13');
 
 INSERT INTO categories(name, status) VALUES
 ('Dưa hấu', 1) ,
@@ -192,7 +192,17 @@ INSERT INTO categories(name, status) VALUES
 INSERT INTO `products` (`name`, `image`, `price`, `sale_price`, `category_id`, `description`, `status`, `created_at`, `updated_at`) VALUES
 ('Product 2', 'TdBYSppJ7t4hlK8b79FjDtXhOKRvdusqKcnqxLwL.png', 500000.00, 250000.00, 2, 'sasas', 1, '2023-12-06', '2023-12-06'),
 ('Product 3', 'TdBYSppJ7t4hlK8b79FjDtXhOKRvdusqKcnqxLwL.png', 500000.00, 250000.00, 2, 'sasas', 1, '2023-12-06', '2023-12-06'),
-('Product 4', 'TdBYSppJ7t4hlK8b79FjDtXhOKRvdusqKcnqxLwL.png', 500000.00, 250000.00, 2, 'sasas', 1, '2023-12-06', '2023-12-06');
+('Product 4', 'TdBYSppJ7t4hlK8b79FjDtXhOKRvdusqKcnqxLwL.png', 500000.00, 250000.00, 2, 'sasas', 1, '2023-12-06', '2023-12-06'),
+('Product 5', 'TdBYSppJ7t4hlK8b79FjDtXhOKRvdusqKcnqxLwL.png', 500000.00, 250000.00, 3, 'sasas', 1, '2023-12-06', '2023-12-06'),
+('Product 6', 'TdBYSppJ7t4hlK8b79FjDtXhOKRvdusqKcnqxLwL.png', 500000.00, 250000.00, 3, 'sasas', 1, '2023-12-06', '2023-12-06'),
+('Product 7', 'TdBYSppJ7t4hlK8b79FjDtXhOKRvdusqKcnqxLwL.png', 500000.00, 250000.00, 3, 'sasas', 1, '2023-12-06', '2023-12-06');
+('Product 8', 'TdBYSppJ7t4hlK8b79FjDtXhOKRvdusqKcnqxLwL.png', 500000.00, 250000.00, 1, 'sasas', 1, '2023-12-06', '2023-12-06'),
+('Product 9', 'TdBYSppJ7t4hlK8b79FjDtXhOKRvdusqKcnqxLwL.png', 500000.00, 250000.00, 1, 'sasas', 1, '2023-12-06', '2023-12-06'),
+('Product 10', 'TdBYSppJ7t4hlK8b79FjDtXhOKRvdusqKcnqxLwL.png', 500000.00, 250000.00, 1, 'sasas', 1, '2023-12-06', '2023-12-06');
+('Product 11', 'TdBYSppJ7t4hlK8b79FjDtXhOKRvdusqKcnqxLwL.png', 500000.00, 250000.00, 4, 'sasas', 1, '2023-12-06', '2023-12-06'),
+('Product 12', 'TdBYSppJ7t4hlK8b79FjDtXhOKRvdusqKcnqxLwL.png', 500000.00, 250000.00, 4, 'sasas', 1, '2023-12-06', '2023-12-06'),
+('Product 13', 'TdBYSppJ7t4hlK8b79FjDtXhOKRvdusqKcnqxLwL.png', 500000.00, 250000.00, 4, 'sasas', 1, '2023-12-06', '2023-12-06');
+
 
 INSERT INTO `product_images` (`id`, `image`, `product_id`, `status`, `created_at`, `updated_at`) VALUES
 (17, 'mrppO4Xk0YexKFRgwtJJdKGJm9naIJ0DryeDth4z.png', 1, 0, '2023-12-06', '2023-12-06'),
@@ -201,12 +211,12 @@ INSERT INTO `product_images` (`id`, `image`, `product_id`, `status`, `created_at
 (20, 'lP4RQq0nehFTxGrnI0mVMJJOBKqlh2ziyt21m4Hd.png', 1, 0, '2023-12-06', '2023-12-06');
 
 INSERT INTO `customers` (`id`, `name`, `email`, `phone`, `address`, `gender`, `password`, `email_verified_at`, `created_at`, `updated_at`) VALUES
-(1, 'Nguyễn Thanh Thủy', 'thetg.22ba13293@usth.edu.vn', '0394631391', 'ssssssss', 0, '$2y$12$u7YvHMORtXORaF4vlOeqIulZflCinU7EART7Bzsdt/1wMownAnE9e', '2024-08-13', '2024-08-13', '2024-08-13');
+(1, 'Trần Gia Thế', 'thetg.22ba13293@usth.edu.vn', '0394631391', 'ssssssss', 0, '$2y$12$u7YvHMORtXORaF4vlOeqIulZflCinU7EART7Bzsdt/1wMownAnE9e', '2024-08-13', '2024-08-13', '2024-08-13');
 
 INSERT INTO `orders` (`id`, `name`, `email`, `phone`, `address`, `token`, `customer_id`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Nguyễn Thanh Thủy', 'thetg.22ba13293@usth.edu.vn', '0394631391', 'ssssssss', NULL, 1, 1, '2024-08-13', '2024-08-13'),
-(2, 'Nguyễn Thanh Thủy', 'thetg.22ba13293@usth.edu.vn', '0394631391', 'ssssssss', NULL, 1, 2, '2024-08-13', '2024-08-13'),
-(3, 'Nguyễn Thanh Thủy', 'thetg.22ba13293@usth.edu.vn', '0394631391', 'ssssssss', NULL, 1, 3, '2024-08-13', '2024-08-13');
+(1, 'Trần Gia Thế', 'thetg.22ba13293@usth.edu.vn', '0394631391', 'ssssssss', NULL, 1, 1, '2024-08-13', '2024-08-13'),
+(2, 'Trần Gia Thế', 'thetg.22ba13293@usth.edu.vn', '0394631391', 'ssssssss', NULL, 1, 2, '2024-08-13', '2024-08-13'),
+(3, 'Trần Gia Thế', 'thetg.22ba13293@usth.edu.vn', '0394631391', 'ssssssss', NULL, 1, 3, '2024-08-13', '2024-08-13');
 
 INSERT INTO `order_details` (`order_id`, `product_id`, `quantity`, `price`) VALUES
 (1, 1, 3, 250000.000),
@@ -218,3 +228,7 @@ INSERT INTO `order_details` (`order_id`, `product_id`, `quantity`, `price`) VALU
 (3, 2, 4, 250000.000),
 (3, 3, 1, 250000.000);
 
+INSERT INTO `blogs` (`id`, `name`, `link`, `image`, `description`, `position`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Hamburg Meat is Animal Flesh Food', '#', 'blog_post01.jpg', 'Meat provide well shapd fresh and organic meat well animals is Humans', 'top-banner', 1, '2024-08-13', '2024-08-13'),
+(2, 'Good Source of Iron And Flesh Food', '#', 'blog_post02.jpg', 'Meat provide well shapd fresh and organic meat well animals is Humans', 'top-banner', 2, '2024-08-13', '2024-08-13'),
+(3, 'Chicken Sausage For Sale Humanely Raised', '#', 'blog_post03.jpg', 'Meat provide well shapd fresh and organic meat well animals is Humans', 'top-banner', 3, '2024-08-13', '2024-08-13');
