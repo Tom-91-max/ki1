@@ -115,15 +115,7 @@
                                             </li>
                                             <li class="menu-item-has-children"><a href="#">BLOG</a>
                                                 <ul class="sub-menu">
-                                                    <li><a href="blog.html">Our Blog</a></li>
-                                                    <li><a href="blog-details.html">Blog Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="menu-item-has-children"><a href="#">PAGES</a>
-                                                <ul class="sub-menu">
-                                                    <li><a href="services.html">Services Page</a></li>
-                                                    <li><a href="services-details.html">Services Details</a></li>
-                                                    <li><a href="team-details.html">Team Details</a></li>
+                                                    <li><a href="blog.html">All Blog</a></li>
                                                 </ul>
                                             </li>
                                             <li><a href="{{ route('home.contact')}}">Contact</a></li>

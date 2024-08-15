@@ -88,6 +88,19 @@ Create table blogs
     updated_at date null
 );
 
+Create table services
+(
+    id int primary key auto_increment,
+    name varchar(100) NOT NULL UNIQUE,
+    link varchar(100) NOT NULL DEFAULT '#',
+    image varchar(100) NOT NULL,
+    description varchar(255) NOT NULL,
+    position varchar(100) DEFAULT 'top-banner',
+    status tinyint(1) DEFAULT '0',
+    created_at date DEFAULT current_timestamp(),
+    updated_at date null
+);
+
 
 Create table customers
 (
@@ -121,6 +134,14 @@ Create table comments
     updated_at date null,
     FOREIGN KEY (customer_id) REFERENCES customers(id),
     FOREIGN KEY (product_id) REFERENCES products(id)
+);
+
+Create table contacts
+(
+    id int primary key auto_increment,
+    comment text,
+    created_at date DEFAULT current_timestamp(),
+    updated_at date null,
 );
 
 Create table favorites
@@ -171,6 +192,20 @@ Create table order_details
     FOREIGN KEY (order_id) REFERENCES orders(id),
     FOREIGN KEY (product_id) REFERENCES products(id)
 );
+
+CREATE TABLE rating
+ (
+id INT NOT NULL AUTO_INCREMENT,
+product_id INT NOT NULL,
+customer_id INT NOT NULL,
+rate INT NOT NULL DEFAULT '5',
+content text NULL,
+date date DEFAULT NOW(),
+status tinyint DEFAULT '1',
+PRIMARY KEY pk_rate (id),
+FOREIGN KEY (product_id) REFERENCES product (id),
+FOREIGN KEY (customer_id) REFERENCES customer (id)
+) ENGINE = InnoDB;
 
 INSERT INTO banners(name, image, link, status) VALUES
 ('My shop', 'banner_bg.png', '#', 1) ;
