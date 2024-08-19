@@ -128,12 +128,12 @@ Create table comments
 (
     id int primary key auto_increment,
     customer_id int NOT NULL,
-    product_id int NOT NULL,
+    blog_id int NOT NULL,
     comment text,
     created_at date DEFAULT current_timestamp(),
     updated_at date null,
     FOREIGN KEY (customer_id) REFERENCES customers(id),
-    FOREIGN KEY (product_id) REFERENCES products(id)
+    FOREIGN KEY (blog_id) REFERENCES blogs(id)
 );
 
 Create table contacts
@@ -141,7 +141,7 @@ Create table contacts
     id int primary key auto_increment,
     comment text,
     created_at date DEFAULT current_timestamp(),
-    updated_at date null,
+    updated_at date null
 );
 
 Create table favorites
@@ -193,19 +193,7 @@ Create table order_details
     FOREIGN KEY (product_id) REFERENCES products(id)
 );
 
-CREATE TABLE rating
- (
-id INT NOT NULL AUTO_INCREMENT,
-product_id INT NOT NULL,
-customer_id INT NOT NULL,
-rate INT NOT NULL DEFAULT '5',
-content text NULL,
-date date DEFAULT NOW(),
-status tinyint DEFAULT '1',
-PRIMARY KEY pk_rate (id),
-FOREIGN KEY (product_id) REFERENCES product (id),
-FOREIGN KEY (customer_id) REFERENCES customer (id)
-) ENGINE = InnoDB;
+
 
 INSERT INTO banners(name, image, link, status) VALUES
 ('My shop', 'banner_bg.png', '#', 1) ;
@@ -231,12 +219,7 @@ INSERT INTO `products` (`name`, `image`, `price`, `sale_price`, `category_id`, `
 ('Product 5', 'TdBYSppJ7t4hlK8b79FjDtXhOKRvdusqKcnqxLwL.png', 500000.00, 250000.00, 3, 'sasas', 1, '2023-12-06', '2023-12-06'),
 ('Product 6', 'TdBYSppJ7t4hlK8b79FjDtXhOKRvdusqKcnqxLwL.png', 500000.00, 250000.00, 3, 'sasas', 1, '2023-12-06', '2023-12-06'),
 ('Product 7', 'TdBYSppJ7t4hlK8b79FjDtXhOKRvdusqKcnqxLwL.png', 500000.00, 250000.00, 3, 'sasas', 1, '2023-12-06', '2023-12-06');
-('Product 8', 'TdBYSppJ7t4hlK8b79FjDtXhOKRvdusqKcnqxLwL.png', 500000.00, 250000.00, 1, 'sasas', 1, '2023-12-06', '2023-12-06'),
-('Product 9', 'TdBYSppJ7t4hlK8b79FjDtXhOKRvdusqKcnqxLwL.png', 500000.00, 250000.00, 1, 'sasas', 1, '2023-12-06', '2023-12-06'),
-('Product 10', 'TdBYSppJ7t4hlK8b79FjDtXhOKRvdusqKcnqxLwL.png', 500000.00, 250000.00, 1, 'sasas', 1, '2023-12-06', '2023-12-06');
-('Product 11', 'TdBYSppJ7t4hlK8b79FjDtXhOKRvdusqKcnqxLwL.png', 500000.00, 250000.00, 4, 'sasas', 1, '2023-12-06', '2023-12-06'),
-('Product 12', 'TdBYSppJ7t4hlK8b79FjDtXhOKRvdusqKcnqxLwL.png', 500000.00, 250000.00, 4, 'sasas', 1, '2023-12-06', '2023-12-06'),
-('Product 13', 'TdBYSppJ7t4hlK8b79FjDtXhOKRvdusqKcnqxLwL.png', 500000.00, 250000.00, 4, 'sasas', 1, '2023-12-06', '2023-12-06');
+
 
 
 INSERT INTO `product_images` (`id`, `image`, `product_id`, `status`, `created_at`, `updated_at`) VALUES

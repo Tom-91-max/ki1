@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Admin\Controllers\ServiceController as ControllersServiceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AccountController;
@@ -10,6 +11,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CommentController as AdminCommentController;
 use App\Http\Controllers\Admin\CustomerController as AdminCustomerController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\ServiceController as AdminServiceController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\BannerController as ControllersBannerController;
 use App\Http\Controllers\BlogController;
@@ -18,6 +20,7 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -112,6 +115,7 @@ Route::group(['prefix' => 'admin', 'middleware'=>'auth'], function() {
     Route::resource('customer', AdminCustomerController::class);
     Route::resource('comment', AdminCommentController::class);
     Route::resource('blog', AdminBlogController::class);
+    Route::resource('service', AdminServiceController::class);
 });
 
 
