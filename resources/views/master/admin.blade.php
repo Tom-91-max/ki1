@@ -141,6 +141,15 @@
         </li>
         <li class="treeview">
           <a href="#">
+          <i class="fa fa-comment"></i> <span>Contact</span> <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ route('contact.index') }}"><i class="fa fa-circle-o"></i> List</a></li>
+            <li><a href="{{ route('contact.create') }}"><i class="fa fa-circle-o"></i> Add new</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
           <i class="fa fa-list"></i> <span>Blog</span> <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">

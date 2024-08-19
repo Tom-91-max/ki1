@@ -136,6 +136,17 @@ Create table comments
     FOREIGN KEY (blog_id) REFERENCES blogs(id)
 );
 
+
+Create table contacts
+(
+    id int primary key auto_increment,
+    customer_id int NOT NULL,
+    comment text,
+    created_at date DEFAULT current_timestamp(),
+    updated_at date null,
+    FOREIGN KEY (customer_id) REFERENCES customers(id),
+);
+
 Create table contacts
 (
     id int primary key auto_increment,
